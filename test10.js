@@ -13,3 +13,21 @@ function findSmallestElement(arr) {
 
     return Math.min(...arr);
 }
+function calculateMinimumNotesAndCoins(amount) {
+    if (isNaN(amount) || amount <= 0) {
+        return "유효한 금액을 입력해주세요.";
+    }
+
+    const denominations = [50000, 10000, 5000, 1000, 500, 100, 50, 10, 5, 1];
+    const result = {};
+
+    for (let denomination of denominations) {
+        const count = Math.floor(amount / denomination);
+        if (count > 0) {
+            result[denomination] = count;
+            amount -= count * denomination;
+        }
+    }
+
+    return result;
+}

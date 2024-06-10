@@ -3,7 +3,7 @@ function changeCalculate(money){
     for(let i=0;i<unit.length; i++){
        
         let num =Math.floor(money / unit[i])
-        console.log(unit[i]+"X"+num)
+console.log(unit[i]+ "X"+num)
         money=money -(unit[i]*num)
         }
 }
